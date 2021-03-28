@@ -18,11 +18,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/gacerioni/tibia_monster_loot_item_id">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Tibia Monster Loot Item ID Discovery - by Gabs the Creator</h3>
 
   <p align="center">
     An awesome README template to jumpstart your projects!
