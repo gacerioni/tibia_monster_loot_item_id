@@ -55,7 +55,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-I'm always playing with autoloot State of the Art on OTServers... that's why.
+I'm always playing with autoloot State of the Art on OTServers... that's the reason.
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
