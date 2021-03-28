@@ -54,7 +54,7 @@
 
 I'm always playing with autoloot State of the Art on OTServers... that's the reason.
 
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]
 
 
 <!-- GETTING STARTED -->
@@ -65,8 +65,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* python3.6+
+* [python3.6+](https://www.python.org/downloads/)
 
 
 ### Installation
