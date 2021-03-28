@@ -67,7 +67,7 @@ To get a local copy up and running follow these simple example steps.
 * [python3.6+](https://www.python.org/downloads/)
 
 
-### Installation
+### Installation and Usage
 
 1. Clone the repo
    ```sh
