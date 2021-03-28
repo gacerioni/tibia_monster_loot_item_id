@@ -55,9 +55,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+I'm always playing with autoloot State of the Art on OTServers... that's why.
+
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-I'm always playing with autoloot State of the Art on OTServers... that's why.
 
 <!-- GETTING STARTED -->
 ## Getting Started
