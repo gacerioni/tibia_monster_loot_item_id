@@ -68,7 +68,7 @@ def get_tibiawiki_monster_loot_single_list(monster_page_raw):
         except:
             print("FAILED, but I'll ignore. Maybe this monster doesn't have this kind of loot.")
         else:
-            print("OK, adding this loot list to the response.")
+            #print("OK, adding this loot list to the response.")
             parsed_list_response = parsed_list_response + loot_final
 
     return parsed_list_response
