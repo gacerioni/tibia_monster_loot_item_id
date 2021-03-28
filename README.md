@@ -190,7 +190,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/gacerioni/tibia_monster_loot_item_id?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/gacerioni/tibia_monster_loot_item_id.svg?style=for-the-badge
 [contributors-url]: https://github.com/gacerioni/tibia_monster_loot_item_id/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/gacerioni/tibia_monster_loot_item_id.svg?style=for-the-badge
 [forks-url]: https://github.com/gacerioni/tibia_monster_loot_item_id/network/members
