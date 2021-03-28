@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/gacerioni/tibia_monster_loot_item_id">
-    <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="images/Tibia_Logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Tibia Monster Loot Item ID Discovery - by Gabs the Creator</h3>
