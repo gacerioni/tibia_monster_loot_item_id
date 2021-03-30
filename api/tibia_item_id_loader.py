@@ -55,8 +55,8 @@ if __name__ == '__main__':
    
    # 1-) Creating the MongoDB client, db, connection
     client = mongodb_client_connection()
-    tibia_db = client.tibia
-    tibia_item_and_id_collection = tibia_db.item_and_id
+    tibia_db = client["tibia"]
+    tibia_item_and_id_collection = tibia_db["item_and_id"]
 
     # 2-) Cleaning last Collection, in case anything changes
     mongodb_clean_item_id_collection(tibia_item_and_id_collection)
