@@ -1,12 +1,13 @@
 import re
+import config
 import urllib.request
 from bs4 import BeautifulSoup
 from html_table_parser import HTMLTableParser
 from pymongo import MongoClient
 
 
-def mongodb_client_connection():    
-    client = MongoClient("<ENABLING VAULT, PLEASE WAIT>")
+def mongodb_client_connection(user, pwd, connstr):
+    client = MongoClient("mongodb+srv://{0}:{1}@{2}".format(user, pwd, connstr))
 
     return client
 
@@ -54,9 +55,16 @@ def get_tibia_id_dict():
 if __name__ == '__main__':
    
    # 1-) Creating the MongoDB client, db, connection
-    client = mongodb_client_connection()
-    tibia_db = client["tibia"]
-    tibia_item_and_id_collection = tibia_db["item_and_id"]
+
+    mongo_usr = config.mongodb_config['mongodb_user']
+    mongo_pwd = config.mongodb_config['mongodb_pwd']
+    mongo_connstr = config.mongodb_config['mongodb_cluster_conn_str']
+    mongo_db =  config.mongodb_config['mongodb_tibia_db']
+    mongo_collection = config.mongodb_config['mongodb_tibia_item_id_collection']
+
+    client = mongodb_client_connection(mongo_usr, mongo_pwd, mongo_connstr)
+    tibia_db = client[mongo_db]
+    tibia_item_and_id_collection = tibia_db[mongo_collection]
 
     # 2-) Cleaning last Collection, in case anything changes
     mongodb_clean_item_id_collection(tibia_item_and_id_collection)
@@ -65,3 +73,4 @@ if __name__ == '__main__':
     mongodb_inject_item_id(tibia_item_and_id_collection)
 
     print(tibia_item_and_id_collection.find_one({"item_name" : "Platinum Coin"}))
+
