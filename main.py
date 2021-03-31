@@ -73,31 +73,6 @@ def get_tibiawiki_monster_loot_single_list(monster_page_raw):
 
     return parsed_list_response
 
-
-def get_tibiawiki_monster_loot_by_probability(monster_page_raw):
-    # Im going for readability and logic progress, not performance! Dont be a jerk.
-
-    query = re.compile("\<pre class=.+\>\{.+\"\*\"\:\s\"(\{\{.+\}\}).*\}\<", flags=re.DOTALL)
-    result = query.search(monster_page_raw)
-
-    loot_common_str = re.compile("lootcomum\s+\=\s(.*?)\|").search(result.group(1)).group(1).replace("\\n", "")
-    loot_common_final = [x.replace("[", "").replace("]", "") for x in re.findall("\[\[.+?\]\]", loot_common_str)]
-
-    loot_uncommon_str = re.compile("lootincomum\s+\=\s(.*?)\|").search(result.group(1)).group(1).replace("\\n", "")
-    loot_uncommon_final = [x.replace("[", "").replace("]", "") for x in re.findall("\[\[.+?\]\]", loot_uncommon_str)]
-
-    loot_semirare_str = re.compile("lootsemiraro\s+\=\s(.*?)\|").search(result.group(1)).group(1).replace("\\n", "")
-    loot_semirare_final = [x.replace("[", "").replace("]", "") for x in re.findall("\[\[.+?\]\]", loot_semirare_str)]
-
-    loot_rare_str = re.compile("lootraro\s+\=\s(.*?)\|").search(result.group(1)).group(1).replace("\\n", "")
-    loot_rare_final = [x.replace("[", "").replace("]", "") for x in re.findall("\[\[.+?\]\]", loot_rare_str)]
-
-    parsed_dict_response = {"common": loot_common_final, "uncommon": loot_uncommon_final,
-                            "semi-rare": loot_semirare_final, "rare": loot_rare_final}
-
-    return parsed_dict_response
-
-
 def get_loot_list_item_id(loot_list):
     item_id_dict = get_tibia_id_dict()
     monster_item_id_dict = {}
