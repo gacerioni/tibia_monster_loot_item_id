@@ -1,4 +1,4 @@
-name: tibia_item_id_api
+name: tibia-item-id-api
 replicas: 1
 
 image: ${artifact.metadata.image}
