@@ -4,7 +4,7 @@ metadata:
   name: mongodb-svc
   namespace: tibians
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - name: mongodb-port
     port: 27017
