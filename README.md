@@ -14,7 +14,7 @@
     <img src="images/Tibia_Logo.png" alt="Logo" width="220" height="123">
   </a>
 
-  <h3 align="center">Tibia Monster Loot Item ID Discovery - by Gabs the Creator</h3>
+  <h3 align="center">Tibia Monster Loot Item ID Discovery (CLI and API) - by Gabs the Creator</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -30,11 +30,12 @@
         <li><a href="#installation-and-usage">Installation and Usage</a></li>
       </ul>
     </li>
+    <li><a href="#how-to-use-the-api">How to use the API</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#tech-stack">Tech Stack</a></li>
   </ol>
 </details>
 
@@ -76,6 +77,11 @@ To get a local copy up and running follow these simple example steps.
    <...>
    ```
 
+<!-- HOW TO USE THE API -->
+## How to use the API
+
+TODO
+
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -109,6 +115,14 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Gabriel Cerioni - [@gabs.tar.gz](https://www.instagram.com/gabs.tar.gz/) - gacerioni@gmail.com
 
 Project Link: [https://github.com/gacerioni/tibia_monster_loot_item_id/](https://github.com/gacerioni/tibia_monster_loot_item_id/)
+
+<!-- Tech Stack -->
+## Tech Stack
+
+* [Python](https://www.python.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+* [FastAPI](https://fastapi.tiangolo.com/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
