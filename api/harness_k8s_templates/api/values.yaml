@@ -25,6 +25,6 @@ env:
   config:
     TESTGABS: PALMEIRAS
   secrets:
-    TIBIA_API_MONGODB_USR: root
-    TIBIA_API_MONGODB_PWD: secret123
+    TIBIA_API_MONGODB_USR: ${serviceVariable.tibia_api_mongodb_usr}
+    TIBIA_API_MONGODB_PWD: ${serviceVariable.tibia_api_mongodb_pwd}
     TIBIA_API_MONGODB_HOST: mongodb-svc:27017
