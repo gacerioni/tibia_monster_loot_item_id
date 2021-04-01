@@ -48,6 +48,8 @@ I'm always playing with autoloot State of the Art on OTServers... that's the rea
 
 ![Product Name Screen Shot][product-screenshot]
 
+![Postman API all items][api_postman_all](http://127.0.0.1:8000/tibiaitems)
+
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -140,3 +142,6 @@ Project Link: [https://github.com/gacerioni/tibia_monster_loot_item_id/](https:/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/gabrielcerioni
 [product-screenshot]: images/gabs_tibia.png
+[api_postman_all]: images/Postman_API_ALL.png
+[api_postman_id]: images/Postman_API_by_id.png
+[api_postman_name]: images/Postman_API_by_name.png
