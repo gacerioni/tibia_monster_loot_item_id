@@ -35,7 +35,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#tech-stack">Tech Stack</a></li>
   </ol>
 </details>
 
@@ -111,6 +111,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
+
+Gabriel Cerioni - [@gabs.tar.gz](https://www.instagram.com/gabs.tar.gz/) - gacerioni@gmail.com
+
+Project Link: [https://github.com/gacerioni/tibia_monster_loot_item_id/](https://github.com/gacerioni/tibia_monster_loot_item_id/)
+
+<!-- Tech Stack -->
+## Tech Stack
 
 Gabriel Cerioni - [@gabs.tar.gz](https://www.instagram.com/gabs.tar.gz/) - gacerioni@gmail.com
 
