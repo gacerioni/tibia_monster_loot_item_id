@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tibia-item-id-api-svc
+  namespace: tibians
+spec:
+  type: LoadBalancer
+  ports:
+  - name: fastapi-port
+    port: 8000
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: tibia_item_id_api
