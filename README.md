@@ -64,6 +64,11 @@ To get a local copy up and running follow these simple example steps.
 
 * [python3.6+](https://www.python.org/downloads/)
 
+* For MacOs Users, please double-check the SSL CERT
+   ```sh
+   cd /Applications/Python\ 3.9/ # PUT YOUR PYTHON VERSION
+   ./Install\ Certificates.command
+   ```
 
 ### Installation and Usage
 
