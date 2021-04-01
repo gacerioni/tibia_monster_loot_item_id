@@ -119,9 +119,10 @@ Project Link: [https://github.com/gacerioni/tibia_monster_loot_item_id/](https:/
 <!-- Tech Stack -->
 ## Tech Stack
 
-Gabriel Cerioni - [@gabs.tar.gz](https://www.instagram.com/gabs.tar.gz/) - gacerioni@gmail.com
-
-Project Link: [https://github.com/gacerioni/tibia_monster_loot_item_id/](https://github.com/gacerioni/tibia_monster_loot_item_id/)
+* [Python](https://www.python.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [PyMongo](https://pymongo.readthedocs.io/en/stable/)
+* [FastAPI](https://fastapi.tiangolo.com/)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
