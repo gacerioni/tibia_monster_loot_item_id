@@ -1,7 +1,8 @@
 from typing import Optional
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 
-from mongodb_tibia_db import get_all_tibia_itemid_from_collection
+from mongodb_tibia_db import get_all_tibia_itemid_from_collection, get_tibia_item_by_id_from_collection, \
+    get_tibia_item_by_name_from_collection
 
 app = FastAPI()
 
@@ -17,7 +18,20 @@ def get_all_tibia_items_from_mongodb_collection():
 
     return {"all_tibia_items": itemid_list}
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
 
+@app.get("/tibiaitems/id/{item_id}")
+async def read_item(item_id: int, q: Optional[str] = Query("defaultquery", max_length=500)):
+    result = get_tibia_item_by_id_from_collection(item_id)
+
+    return result
+
+    # if q:
+    #    return {"item_id": item_id, "q": q}
+    # return {"item_id": item_id}
+
+
+@app.get("/tibiaitems/name/{item_name}")
+async def read_item(item_name: str, q: Optional[str] = Query("defaultquery", max_length=500)):
+    result = get_tibia_item_by_name_from_collection(item_name)
+
+    return result

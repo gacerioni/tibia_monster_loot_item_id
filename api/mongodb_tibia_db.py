@@ -17,6 +17,7 @@ def get_mongodb_tibia_itemid_collection():
 
     return tibia_item_and_id_collection
 
+
 def get_all_tibia_itemid_from_collection():
     itemid_collection_list = []
     itemid_collection = get_mongodb_tibia_itemid_collection()
@@ -27,6 +28,25 @@ def get_all_tibia_itemid_from_collection():
         itemid_collection_list.append(item_id)
 
     return itemid_collection_list
+
+
+def get_tibia_item_by_id_from_collection(item_id):
+    itemid_collection = get_mongodb_tibia_itemid_collection()
+
+    itemid_document = itemid_collection.find_one({'item_id': {'$regex': '.*{0}.*'.format(str(item_id))}},
+                                                 {'_id': False})
+
+    return itemid_document
+
+
+def get_tibia_item_by_name_from_collection(item_name):
+    itemid_collection = get_mongodb_tibia_itemid_collection()
+
+    itemid_document = itemid_collection.find_one(
+        {'item_name': re.compile('.*{0}.*'.format(str(item_name)), re.IGNORECASE)}, {'_id': False})
+
+    return itemid_document
+
 
 if __name__ == '__main__':
     print(get_all_tibia_itemid_from_collection())
