@@ -14,7 +14,7 @@
     <img src="images/Tibia_Logo.png" alt="Logo" width="220" height="123">
   </a>
 
-  <h3 align="center">Tibia Monster Loot Item ID Discovery - by Gabs the Creator</h3>
+  <h3 align="center">Tibia Monster Loot Item ID Discovery (Util cli and API) - by Gabs the Creator</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -75,6 +75,15 @@ To get a local copy up and running follow these simple example steps.
    # Demon
    <...>
    ```
+
+### Prerequisites
+
+* [python3.6+](https://www.python.org/downloads/)
+
+<!-- HOW TO USE THE API -->
+## How to use the API
+
+TODO
 
 <!-- ROADMAP -->
 ## Roadmap
