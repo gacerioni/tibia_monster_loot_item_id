@@ -1,4 +1,4 @@
-name: harness-example
+name: gacerioni/tibia_item_id_api
 replicas: 1
 
 image: ${artifact.metadata.image}
@@ -14,8 +14,8 @@ serviceType: LoadBalancer
 
 # A Service can map an incoming port to any targetPort.
 # targetPort is where application is listening on inside the container.
-servicePort: 80
-serviceTargetPort: 80
+servicePort: 8000
+serviceTargetPort: 8000
 
 # Specify all environment variables to be added to the container.
 # The following two maps, config and secrets, are put into a ConfigMap
@@ -23,6 +23,8 @@ serviceTargetPort: 80
 # Both are added to the container environment in podSpec as envFrom source.
 env:
   config:
-    key1: value1
+    TESTGABS: PALMEIRAS
   secrets:
-    key2: value2
+    TIBIA_API_MONGODB_USR: root
+    TIBIA_API_MONGODB_PWD: secret123
+    TIBIA_API_MONGODB_HOST: mongodb-svc:27017

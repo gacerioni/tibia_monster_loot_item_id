@@ -1,28 +1,73 @@
+{{- if .Values.env.config}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{.Values.name}}
+data:
+{{.Values.env.config | toYaml | indent 2}}
+---
+{{- end}}
+
+{{- if .Values.env.secrets}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{.Values.name}}
+stringData:
+{{.Values.env.secrets | toYaml | indent 2}}
+---
+{{- end}}
+
+{{- if .Values.dockercfg}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{.Values.name}}-dockercfg
+  annotations:
+    harness.io/skip-versioning: true
+data:
+  .dockercfg: {{.Values.dockercfg}}
+type: kubernetes.io/dockercfg
+---
+{{- end}}
+
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tibia-item-id-api-deployment
-  namespace: tibians
+  name: {{.Values.name}}-deployment
 spec:
-  replicas: 1
+  replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
-      app: tibia_item_id_api
+      app: {{.Values.name}}
   template:
     metadata:
       labels:
-        app: tibia_item_id_api
+        app: {{.Values.name}}
     spec:
+      {{- if .Values.dockercfg}}
+      imagePullSecrets:
+      - name: {{.Values.name}}-dockercfg
+      {{- end}}
       containers:
-      - name: tibia-item-id-api
-        image: gacerioni/tibia_item_id_api:latest
-        ports:
-        - containerPort: 8000
-        env:
-        - name: TIBIA_API_MONGODB_USR
-          value: root
-        - name: TIBIA_API_MONGODB_PWD
-          value: secret123
-        - name: TIBIA_API_MONGODB_HOST
-          value: mongodb-svc:27017
+      - name: {{.Values.name}}
+        image: {{.Values.image}}
+        #env:
+        #- name: TIBIA_API_MONGODB_USR
+        #  value: root
+        #- name: TIBIA_API_MONGODB_PWD
+        #  value: secret123
+        #- name: TIBIA_API_MONGODB_HOST
+        #  value: mongodb-svc:27017
+        {{- if or .Values.env.config .Values.env.secrets}}
+        envFrom:
+        {{- if .Values.env.config}}
+        - configMapRef:
+            name: {{.Values.name}}
+        {{- end}}
+        {{- if .Values.env.secrets}}
+        - secretRef:
+            name: {{.Values.name}}
+        {{- end}}
+        {{- end}}
