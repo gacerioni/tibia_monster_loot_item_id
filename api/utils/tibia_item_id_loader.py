@@ -1,4 +1,5 @@
 import re
+#import ssl
 import config
 import urllib.request
 from bs4 import BeautifulSoup

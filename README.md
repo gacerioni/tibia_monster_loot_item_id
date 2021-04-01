@@ -81,11 +81,21 @@ To get a local copy up and running follow these simple example steps.
    # Demon
    <...>
    ```
+4. (Optional) If you want to run the API on your local env
+   ```sh
+   pip install -r requirements.txt
+   export TIBIA_API_MONGODB_USR="<USER>"
+   export TIBIA_API_MONGODB_PWD="<PWD>"
+   cd ./api
+   uvicorn main:app --reload
+   ```
 
 <!-- HOW TO USE THE API -->
 ## How to use the API
 
 TODO
+
+uvicorn main:app --reload
 
 * [FastAPI Automatic Swagger Docs](http://127.0.0.1:8000/docs)
 * [FastAPI Redoc Automatic Docs](http://127.0.0.1:8000/redoc)

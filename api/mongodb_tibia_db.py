@@ -49,4 +49,5 @@ def get_tibia_item_by_name_from_collection(item_name):
 
 
 if __name__ == '__main__':
-    print(get_all_tibia_itemid_from_collection())
+    #print(get_all_tibia_itemid_from_collection())
+    print(MONGO_USR)
