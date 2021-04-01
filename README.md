@@ -14,7 +14,7 @@
     <img src="images/Tibia_Logo.png" alt="Logo" width="220" height="123">
   </a>
 
-  <h3 align="center">Tibia Monster Loot Item ID Discovery (Util cli and API) - by Gabs the Creator</h3>
+  <h3 align="center">Tibia Monster Loot Item ID Discovery (CLI and API) - by Gabs the Creator</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -30,6 +30,7 @@
         <li><a href="#installation-and-usage">Installation and Usage</a></li>
       </ul>
     </li>
+    <li><a href="#how-to-use-the-api">How to use the API</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -75,10 +76,6 @@ To get a local copy up and running follow these simple example steps.
    # Demon
    <...>
    ```
-
-### Prerequisites
-
-* [python3.6+](https://www.python.org/downloads/)
 
 <!-- HOW TO USE THE API -->
 ## How to use the API
