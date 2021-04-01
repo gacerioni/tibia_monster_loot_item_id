@@ -53,6 +53,8 @@ spec:
       containers:
       - name: {{.Values.name}}
         image: {{.Values.image}}
+        ports:
+        - containerPort: {{.Values.serviceTargetPort}}
         #env:
         #- name: TIBIA_API_MONGODB_USR
         #  value: root
