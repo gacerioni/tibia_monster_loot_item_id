@@ -55,13 +55,6 @@ spec:
         image: {{.Values.image}}
         ports:
         - containerPort: {{.Values.serviceTargetPort}}
-        #env:
-        #- name: TIBIA_API_MONGODB_USR
-        #  value: root
-        #- name: TIBIA_API_MONGODB_PWD
-        #  value: secret123
-        #- name: TIBIA_API_MONGODB_HOST
-        #  value: mongodb-svc:27017
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
         {{- if .Values.env.config}}
