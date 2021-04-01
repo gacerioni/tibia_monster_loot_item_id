@@ -48,7 +48,7 @@ I'm always playing with autoloot State of the Art on OTServers... that's the rea
 
 ![Product Name Screen Shot][product-screenshot]
 
-![Postman API all items][api_postman_all](http://127.0.0.1:8000/tibiaitems)
+[![Postman API all items][api_postman_all]](http://127.0.0.1:8000/tibiaitems)
 
 
 <!-- GETTING STARTED -->
