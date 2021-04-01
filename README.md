@@ -92,7 +92,7 @@ To get a local copy up and running follow these simple example steps.
    cd tibia_monster_loot_item_id
    pip install pipenv
    sudo pipenv shell
-   pipenv install -r requirements.txt
+   pipenv install --dev
    export TIBIA_API_MONGODB_USR="<USER>"
    export TIBIA_API_MONGODB_PWD="<PWD>"
    cd ./api
