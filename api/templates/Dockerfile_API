@@ -1,0 +1,17 @@
+# PLEASE BUILD IT IN THE PROJECT ROOT ENV, LIKE THIS
+# docker build -t tibia_item_id_api:latest -f ./api/templates/Dockerfile_API .
+# docker run -p 8000:8000 --env TIBIA_API_MONGODB_USR="root" --env TIBIA_API_MONGODB_PWD="secret123" --env TIBIA_API_MONGODB_HOST="192.168.0.7:30318" tibia_item_id_api:latest
+
+FROM python:3.10-rc-buster
+
+WORKDIR /app
+
+COPY ./requirements.txt requirements.txt
+RUN cat requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+ENTRYPOINT ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--app-dir", "./api"]
+#ENTRYPOINT ["/bin/sh"]

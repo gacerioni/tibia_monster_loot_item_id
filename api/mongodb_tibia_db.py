@@ -4,14 +4,14 @@ from pymongo import MongoClient
 
 MONGO_USR = config.mongodb_config['mongodb_user']
 MONGO_PWD = config.mongodb_config['mongodb_pwd']
-MONGO_CONNSTR = config.mongodb_config['mongodb_cluster_conn_str']
+MONGO_CONNSTR = config.mongodb_config['mongodb_host']
 MONGO_TIBIA_DB = config.mongodb_config['mongodb_tibia_db']
 MONGO_TIBIA_ITEMID_COLLECTION = config.mongodb_config['mongodb_tibia_item_id_collection']
 
 
 def get_mongodb_tibia_itemid_collection():
-    client = MongoClient("mongodb+srv://{0}:{1}@{2}".format(MONGO_USR, MONGO_PWD, MONGO_CONNSTR))
-
+    #client = MongoClient("mongodb+srv://{0}:{1}@{2}".format(MONGO_USR, MONGO_PWD, MONGO_CONNSTR))
+    client = MongoClient("mongodb://{0}:{1}@{2}".format(MONGO_USR, MONGO_PWD, MONGO_CONNSTR))
     tibia_db = client[MONGO_TIBIA_DB]
     tibia_item_and_id_collection = tibia_db[MONGO_TIBIA_ITEMID_COLLECTION]
 

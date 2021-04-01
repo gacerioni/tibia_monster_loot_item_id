@@ -8,8 +8,8 @@ from pymongo import MongoClient
 
 
 def mongodb_client_connection(user, pwd, connstr):
-    client = MongoClient("mongodb+srv://{0}:{1}@{2}".format(user, pwd, connstr))
-
+    #client = MongoClient("mongodb+srv://{0}:{1}@{2}".format(user, pwd, connstr))
+    client = MongoClient("mongodb://{0}:{1}@{2}".format(user, pwd, connstr))
     return client
 
 def mongodb_inject_item_id(mongodb_collection):
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     mongo_usr = config.mongodb_config['mongodb_user']
     mongo_pwd = config.mongodb_config['mongodb_pwd']
-    mongo_connstr = config.mongodb_config['mongodb_cluster_conn_str']
+    mongo_connstr = config.mongodb_config['mongodb_host']
     mongo_db =  config.mongodb_config['mongodb_tibia_db']
     mongo_collection = config.mongodb_config['mongodb_tibia_item_id_collection']
 

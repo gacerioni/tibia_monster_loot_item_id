@@ -1,0 +1,26 @@
+# PLEASE BUILD IT IN THE PROJECT ROOT ENV, LIKE THIS
+# docker build -t tibia_item_id_mongodb_loader:latest --build-arg MONGODB_USER="root" --build-arg MONGODB_PWD="secret123" --build-arg MONGODB_HOST="192.168.0.7:30318" -f ./api/templates/Dockerfile_ITEMIDLOADER .
+# docker run tibia_item_id_mongodb_loader:latest
+
+FROM python:3.10-rc-buster
+
+ARG MONGODB_USER="root"
+ARG MONGODB_PWD="secret123"
+ARG MONGODB_HOST="localhost"
+
+ENV TIBIA_API_MONGODB_USR=$MONGODB_USER
+ENV TIBIA_API_MONGODB_PWD=$MONGODB_PWD
+ENV TIBIA_API_MONGODB_HOST=$MONGODB_HOST
+
+WORKDIR /app
+
+COPY ./requirements.txt requirements.txt
+RUN cat requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+#RUN python3 ./api/utils/tibia_item_id_loader.py
+
+ENTRYPOINT ["python3", "./api/utils/tibia_item_id_loader.py"]
