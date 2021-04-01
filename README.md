@@ -87,6 +87,9 @@ To get a local copy up and running follow these simple example steps.
 
 TODO
 
+* [FastAPI Automatic Swagger Docs](http://127.0.0.1:8000/docs)
+* [FastAPI Redoc Automatic Docs](http://127.0.0.1:8000/redoc)
+
 <!-- ROADMAP -->
 ## Roadmap
 
