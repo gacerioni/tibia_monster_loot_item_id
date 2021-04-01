@@ -50,6 +50,9 @@ I'm always playing with autoloot State of the Art on OTServers... that's the rea
 
 [![Postman API all items][api_postman_all]](http://127.0.0.1:8000/tibiaitems)
 
+[![Postman API by Name][api_postman_name]](http://127.0.0.1:8000/tibiaitems/name/sToNe%20OF%20wIsDoM)
+
+[![Postman API by ID][api_postman_id]](http://127.0.0.1:8000/tibiaitems/id/4124)
 
 <!-- GETTING STARTED -->
 ## Getting Started
