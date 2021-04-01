@@ -88,7 +88,11 @@ To get a local copy up and running follow these simple example steps.
    ```
 4. (Optional) If you want to run the API on your local env
    ```sh
-   pip install -r requirements.txt
+   git clone https://github.com/gacerioni/tibia_monster_loot_item_id.git
+   cd tibia_monster_loot_item_id
+   pip install pipenv
+   sudo pipenv shell
+   pipenv install -r requirements.txt
    export TIBIA_API_MONGODB_USR="<USER>"
    export TIBIA_API_MONGODB_PWD="<PWD>"
    cd ./api
