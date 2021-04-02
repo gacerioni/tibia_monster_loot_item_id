@@ -9,16 +9,12 @@ spec:
       containers:
       - name: tibia-item-id-mongodb-loader
         image: gacerioni/tibia_item_id_mongodb_loader:latest
-        {{- if or .Values.env.config .Values.env.secrets}}
-        envFrom:
-        {{- if .Values.env.config}}
-        - configMapRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- if .Values.env.secrets}}
-        - secretRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- end}}
+        env:
+        - name: TIBIA_API_MONGODB_HOST
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
+        - name: TIBIA_API_MONGODB_USR
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
+        - name: TIBIA_API_MONGODB_PWD
+          value: {{.Values.env.secrets.ME_CONFIG_MONGODB_SERVER}}
       restartPolicy: OnFailure
   backoffLimit: 4

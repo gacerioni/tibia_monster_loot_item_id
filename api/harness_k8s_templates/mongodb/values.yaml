@@ -24,8 +24,8 @@ mongodbPort: 27017
 # Both are added to the container environment in podSpec as envFrom source.
 env:
   config:
-    TESTGABS: PALMEIRAS
+    TESTGABS: {{.name}}-svc
   secrets:
     MONGO_INITDB_ROOT_USERNAME: ${serviceVariable.tibia_api_mongodb_usr}
     MONGO_INITDB_ROOT_PASSWORD: ${serviceVariable.tibia_api_mongodb_pwd}
-    ME_CONFIG_MONGODB_SERVER: mongodb-svc:27017
+    ME_CONFIG_MONGODB_SERVER: tibia-item-id-api-mongodb-svc:27017
