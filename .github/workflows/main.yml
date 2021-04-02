@@ -33,4 +33,4 @@ jobs:
         run: echo $(echo ${GITHUB_REF#refs/heads/})
       - name: Extract User Data
         id: extract_user_data
-        run: echo ${{ github.event.client_payload.text }}
+        run: echo ${{ github.event.client_payload }}
