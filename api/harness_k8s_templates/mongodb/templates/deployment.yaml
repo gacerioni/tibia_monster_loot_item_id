@@ -65,18 +65,13 @@ spec:
             name: {{.Values.name}}
         {{- end}}
         {{- end}}
-      #- name: mongo-express
-      #  image: mongo-express
-        #ports:
-        #- containerPort: {{.Values.serviceTargetPort}}
-        #{{- if or .Values.env.config .Values.env.secrets}}
-        #envFrom:
-        #{{- if .Values.env.config}}
-        #- configMapRef:
-        #    name: {{.Values.name}}
-        #{{- end}}
-        #{{- if .Values.env.secrets}}
-        #- secretRef:
-        #    name: {{.Values.name}}
-        #{{- end}}
-        #{{- end}}
+      - name: mongo-express
+        image: mongo-express
+        ports:
+        - containerPort: {{.Values.serviceTargetPort}}
+        env:
+        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
+        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_PASSWORD}}
+
