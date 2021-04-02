@@ -32,3 +32,8 @@ jobs:
         run: echo Hello, world!
       - name: Do Something Based On Triggered Event Data
         run: 'echo "Triggered event text: ${{ github.event.client_payload.text }}"'
+      - name: Extract branch name
+      - name: debug input variables
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
