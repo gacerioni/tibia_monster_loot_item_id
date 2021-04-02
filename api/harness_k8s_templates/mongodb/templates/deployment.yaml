@@ -56,15 +56,15 @@ spec:
         - containerPort: {{.Values.mongodbPort}}
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
-        {{ - if .Values.env.config }}
+        {{- if .Values.env.config}}
         - configMapRef:
             name: {{.Values.name}}
-        {{- end }}
+        {{- end}}
         {{- if .Values.env.secrets}}
         - secretRef:
             name: {{.Values.name}}
-        {{ - end }}
-        {{ - end }}
+        {{- end}}
+        {{- end}}
         #env:
         #- name: MONGO_INITDB_ROOT_USERNAME
         #  value: root
@@ -76,15 +76,15 @@ spec:
         - containerPort: {{.Values.serviceTargetPort}}
         {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
-        {{- if .Values.env.config }}
+        {{- if .Values.env.config}}
         - configMapRef:
             name: {{.Values.name}}
-        {{- end }}
+        {{- end}}
         {{- if .Values.env.secrets}}
         - secretRef:
             name: {{.Values.name}}
-        {{- end }}
-        {{- end }}
+        {{- end}}
+        {{- end}}
         #env:
         #- name: ME_CONFIG_MONGODB_SERVER
         #  value: localhost
