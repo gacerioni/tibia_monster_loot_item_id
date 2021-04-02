@@ -31,6 +31,6 @@ jobs:
       - name: Extract branch name
         id: extract_branch
         run: echo $(echo ${GITHUB_REF#refs/heads/})
-      - name: Extract User Data
+      - name: Extract User Provided Project Name
         id: extract_user_data
-        run: echo ${{ github.event.client_payload }}
+        run: echo ${{ github.event.client_payload.projectName }}
