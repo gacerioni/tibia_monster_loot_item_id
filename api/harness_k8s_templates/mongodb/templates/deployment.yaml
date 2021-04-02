@@ -1,36 +1,94 @@
+{{- if .Values.env.config}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{.Values.name}}
+data:
+{{.Values.env.config | toYaml | indent 2}}
+---
+{{- end}}
+
+{{- if .Values.env.secrets}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{.Values.name}}
+stringData:
+{{.Values.env.secrets | toYaml | indent 2}}
+---
+{{- end}}
+
+{{- if .Values.dockercfg}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{.Values.name}}-dockercfg
+  annotations:
+    harness.io/skip-versioning: true
+data:
+  .dockercfg: {{.Values.dockercfg}}
+type: kubernetes.io/dockercfg
+---
+{{- end}}
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tibia-mongodb-deployment
-  namespace: tibians
+  name: {{.Values.name}}-deployment
 spec:
-  replicas: 1
+  replicas: {{int .Values.replicas}}
   selector:
     matchLabels:
-      app: mongodb_server
+      app: {{.Values.name}}
   template:
     metadata:
       labels:
-        app: mongodb_server
+        app: {{.Values.name}}
     spec:
+      {{- if .Values.dockercfg}}
+      imagePullSecrets:
+      - name: {{.Values.name}}-dockercfg
+      {{- end}}
       containers:
-      - name: mongo
-        image: mongo
+      - name: {{.Values.name}}
+        image: {{.Values.image}}
         ports:
-        - containerPort: 27017
-        env:
-        - name: MONGO_INITDB_ROOT_USERNAME
-          value: root
-        - name: MONGO_INITDB_ROOT_PASSWORD
-          value: secret123
+        - containerPort: {{.Values.mongodbPort}}
+        { { - if or .Values.env.config .Values.env.secrets } }
+        envFrom:
+        { { - if .Values.env.config } }
+        - configMapRef:
+            name: {{.Values.name}}
+        { { - end } }
+        { { - if .Values.env.secrets } }
+        - secretRef:
+            name: {{.Values.name}}
+        { { - end } }
+        { { - end } }
+        #env:
+        #- name: MONGO_INITDB_ROOT_USERNAME
+        #  value: root
+        #- name: MONGO_INITDB_ROOT_PASSWORD
+        #  value: secret123
       - name: mongo-express
         image: mongo-express
         ports:
-        - containerPort: 8081
-        env:
-        - name: ME_CONFIG_MONGODB_SERVER
-          value: localhost
-        - name: ME_CONFIG_MONGODB_ADMINUSERNAME
-          value: root
-        - name: ME_CONFIG_MONGODB_ADMINPASSWORD
-          value: secret123
+        - containerPort: {{.Values.serviceTargetPort}}
+        { { - if or .Values.env.config .Values.env.secrets } }
+        envFrom:
+        { { - if .Values.env.config } }
+        - configMapRef:
+            name: {{.Values.name}}
+        { { - end } }
+        { { - if .Values.env.secrets } }
+        - secretRef:
+            name: {{.Values.name}}
+        { { - end } }
+        { { - end } }
+        #env:
+        #- name: ME_CONFIG_MONGODB_SERVER
+        #  value: localhost
+        #- name: ME_CONFIG_MONGODB_ADMINUSERNAME
+        #  value: root
+        #- name: ME_CONFIG_MONGODB_ADMINPASSWORD
+        #  value: secret123
