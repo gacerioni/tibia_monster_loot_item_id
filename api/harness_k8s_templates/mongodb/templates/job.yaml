@@ -9,6 +9,7 @@ spec:
       containers:
       - name: tibia-item-id-mongodb-loader
         image: gacerioni/tibia_item_id_mongodb_loader:latest
+        {{- if or .Values.env.config .Values.env.secrets}}
         envFrom:
         {{- if .Values.env.config}}
         - configMapRef:
