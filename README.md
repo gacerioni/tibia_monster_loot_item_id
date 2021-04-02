@@ -4,6 +4,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![Build Status](https://cloud.drone.io/api/badges/gacerioni/tibia_monster_loot_item_id/status.svg)](https://cloud.drone.io/gacerioni/tibia_monster_loot_item_id)
 
 
 
