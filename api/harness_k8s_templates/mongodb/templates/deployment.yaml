@@ -70,21 +70,21 @@ spec:
         #  value: root
         #- name: MONGO_INITDB_ROOT_PASSWORD
         #  value: secret123
-      - name: mongo-express
-        image: mongo-express
-        ports:
-        - containerPort: {{.Values.serviceTargetPort}}
-        {{- if or .Values.env.config .Values.env.secrets}}
-        envFrom:
-        {{- if .Values.env.config}}
-        - configMapRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- if .Values.env.secrets}}
-        - secretRef:
-            name: {{.Values.name}}
-        {{- end}}
-        {{- end}}
+      #- name: mongo-express
+      #  image: mongo-express
+      #  ports:
+      #  - containerPort: {{.Values.serviceTargetPort}}
+      #  {{- if or .Values.env.config .Values.env.secrets}}
+      #  envFrom:
+      #  {{- if .Values.env.config}}
+      #  - configMapRef:
+      #      name: {{.Values.name}}
+      #  {{- end}}
+      #  {{- if .Values.env.secrets}}
+      #  - secretRef:
+      #      name: {{.Values.name}}
+      #  {{- end}}
+      #  {{- end}}
         #env:
         #- name: ME_CONFIG_MONGODB_SERVER
         #  value: localhost

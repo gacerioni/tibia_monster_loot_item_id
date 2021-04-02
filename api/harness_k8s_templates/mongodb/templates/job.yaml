@@ -1,20 +1,20 @@
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: tibia-item-id-mongodb-loader
-  namespace: tibians
-spec:
-  template:
-    spec:
-      containers:
-      - name: tibia-item-id-mongodb-loader
-        image: gacerioni/tibia_item_id_mongodb_loader:latest
-        env:
-        - name: TIBIA_API_MONGODB_HOST
-          value: mongodb-svc:27017
-        - name: TIBIA_API_MONGODB_USR
-          value: root
-        - name: TIBIA_API_MONGODB_PWD
-          value: secret123
-      restartPolicy: OnFailure
-  backoffLimit: 4
+#apiVersion: batch/v1
+#kind: Job
+#metadata:
+#  name: tibia-item-id-mongodb-loader
+#  namespace: tibians
+#spec:
+#  template:
+#    spec:
+#      containers:
+#      - name: tibia-item-id-mongodb-loader
+#        image: gacerioni/tibia_item_id_mongodb_loader:latest
+#        env:
+#        - name: TIBIA_API_MONGODB_HOST
+#          value: mongodb-svc:27017
+#        - name: TIBIA_API_MONGODB_USR
+#          value: root
+#        - name: TIBIA_API_MONGODB_PWD
+#          value: secret123
+#      restartPolicy: OnFailure
+#  backoffLimit: 4
