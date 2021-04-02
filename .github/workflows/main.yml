@@ -33,7 +33,7 @@ jobs:
         run: echo $(echo ${GITHUB_REF#refs/heads/})
       - name: Extract User Provided Branch
         id: extract_user_provided_branch
-        run: 'echo branch: ${{ github.event.ref }}'
+        run: 'echo branch: ${{ github.ref }}'
       - name: Extract User Provided Inputs
         id: extract_user_provided_inputs
         run: 'echo inputs: ${{ github.event.inputs }}'
