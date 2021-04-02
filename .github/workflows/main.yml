@@ -1,0 +1,42 @@
+name: CI-TEST
+
+# Controls when the action will run. 
+on:
+  repository_dispatch:
+    types: do-something
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      projectName:
+        description: 'Project name'
+        required: true
+        default: 'project'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  hello:
+    # The type of runner that the job will run on
+    name: hello
+    runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        id: hello 
+        run: echo Hello, world!
+      - name: Extract branch name
+        id: extract_branch
+        run: echo $(echo ${GITHUB_REF#refs/heads/})
+      - name: Extract User Provided Branch
+        id: extract_user_provided_branch
+        run: 'echo branch: ${{ github.event.ref }}'
+      - name: Extract User Provided Inputs
+        id: extract_user_provided_inputs
+        run: 'echo inputs: ${{ github.event.inputs }}'
+      - name: Extract User Provided Project Name
+        id: extract_user_provided_project_name       
+        run: 'echo projectName: ${{ github.event.inputs.projectName }}'
