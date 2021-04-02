@@ -27,4 +27,5 @@ env:
   secrets:
     TIBIA_API_MONGODB_USR: ${serviceVariable.tibia_api_mongodb_usr}
     TIBIA_API_MONGODB_PWD: ${serviceVariable.tibia_api_mongodb_pwd}
-    TIBIA_API_MONGODB_HOST: tibia-item-id-api-mongodb-svc:27017
+    TIBIA_API_MONGODB_HOST: ${context.MONGODB_SERVICE.SVC_NAME}
+    #TIBIA_API_MONGODB_HOST: tibia-item-id-api-mongodb-svc:27017
