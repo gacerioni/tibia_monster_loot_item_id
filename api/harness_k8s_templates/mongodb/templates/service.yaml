@@ -9,9 +9,9 @@ spec:
     port: {{.Values.mongodbPort}}
     targetPort: {{.Values.mongodbPort}}
     protocol: TCP
-#  - name: mongo-express
-#    port: {{.Values.servicePort}}
-#    targetPort: {{.Values.serviceTargetPort}}
-#    protocol: TCP
+  - name: mongo-express
+    port: {{.Values.servicePort}}
+    targetPort: {{.Values.serviceTargetPort}}
+    protocol: TCP
   selector:
     app: {{.Values.name}}
