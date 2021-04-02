@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI-TEST
 
 # Controls when the action will run. 
@@ -33,7 +31,5 @@ jobs:
       - name: Do Something Based On Triggered Event Data
         run: 'echo "Triggered event text: ${{ github.event.client_payload.text }}"'
       - name: Extract branch name
-      - name: debug input variables
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
+        run: 'echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"'
