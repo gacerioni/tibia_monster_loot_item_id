@@ -74,4 +74,6 @@ spec:
           value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
         - name: ME_CONFIG_MONGODB_ADMINPASSWORD
           value: {{.Values.env.secrets.MONGO_INITDB_ROOT_PASSWORD}}
+        - name: ME_CONFIG_MONGODB_SERVER
+          value: localhost
 
