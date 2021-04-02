@@ -23,8 +23,6 @@ mongodbPort: 27017
 # and a Secret, respectively.
 # Both are added to the container environment in podSpec as envFrom source.
 env:
-  config:
-    TESTGABS: {{.Values.name}}
   secrets:
     MONGO_INITDB_ROOT_USERNAME: ${serviceVariable.tibia_api_mongodb_usr}
     MONGO_INITDB_ROOT_PASSWORD: ${serviceVariable.tibia_api_mongodb_pwd}
