@@ -11,10 +11,10 @@ spec:
         image: gacerioni/tibia_item_id_mongodb_loader:latest
         env:
         - name: TIBIA_API_MONGODB_HOST
-          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
-        - name: TIBIA_API_MONGODB_USR
-          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_PASSWORD}}
-        - name: TIBIA_API_MONGODB_PWD
           value: {{.Values.env.secrets.ME_CONFIG_MONGODB_SERVER}}
+        - name: TIBIA_API_MONGODB_USR
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_USERNAME}}
+        - name: TIBIA_API_MONGODB_PWD
+          value: {{.Values.env.secrets.MONGO_INITDB_ROOT_PASSWORD}}
       restartPolicy: OnFailure
   backoffLimit: 4
